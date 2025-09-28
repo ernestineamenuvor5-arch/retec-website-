@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RETEC - Developing Initiative in Young Ghanaians</title>
+    <meta name="description" content="RETEC develops initiative in young Ghanaians by helping students graduate with direction, purpose, and ownership thinking.">
+    <meta name="keywords" content="RETEC, Ghana education, initiative, career readiness, youth development, Reading Times">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e53e3e;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #e53e3e;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #4a5568;
+        }
+        
+        .cta-button {
+            background: #e53e3e;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: #c53030;
+            transform: scale(1.05);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Problem Section */
+        .problem-section {
+            padding: 4rem 0;
+            background: #f7fafc;
+        }
+        
+        .problem-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #e53e3e;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .mission-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        /* Approach Section */
+        .approach-section {
+            padding: 4rem 0;
+            background: #2d3748;
+            color: white;
+        }
+        
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .approach-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+        
+        .approach-card:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .approach-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Transformation Section */
+        .transformation-section {
+            padding: 4rem 0;
+            background: #f7fafc;
+        }
+        
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .before, .after {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .before {
+            border-left: 5px solid #e53e3e;
+        }
+        
+        .after {
+            border-left: 5px solid #38a169;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 4rem 0;
+            background: white;
+            text-align: center;
+        }
+        
+        .testimonial-card {
+            max-width: 700px;
+            margin: 1.5rem auto;
+            background: #f7fafc;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            font-style: italic;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background: #e53e3e;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section .cta-button {
+            background: white;
+            color: #e53e3e;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+            margin-top: 1rem;
+        }
+        
+        /* Form Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+        
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        /* Typography */
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .highlight {
+            color: #e53e3e;
+            font-weight: bold;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mission-content,
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+            
+            .problem-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">RETEC</div>
+            <button class="hamburger" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-links">
+                <li><a href="#problem">The Problem</a></li>
+                <li><a href="#mission">Our Mission</a></li>
+                <li><a href="#approach">How We Work</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+            <button class="cta-button" id="open-form">Start Building Initiative</button>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Your Child Will Graduate.<br>But Will They Know What To Do Next?</h1>
+            <p>RETEC develops students who finish school with clear direction about their lives and the initiative to pursue their goals.</p>
+            <button class="cta-button" id="hero-cta">Discover How</button>
+        </div>
+    </section>
+    
+    <section class="problem-section" id="problem">
+        <div class="container">
+            <h2>Ghana's Education Creates a Crisis</h2>
+            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">Students graduate with information but no direction. They can recite facts but can't identify problems worth solving. They seek jobs instead of creating opportunities.</p>
+            <div class="problem-stats">
+                <div class="stat-card">
+                    <div class="stat-number">53%</div>
+                    <p>of students want government jobs</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">7%</div>
+                    <p>consider creating businesses</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0%</div>
+                    <p>finish school knowing what problems they want to solve</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="mission-section" id="mission">
+        <div class="container">
+            <div class="mission-content">
+                <div>
+                    <h2 style="text-align: left;">Our Mission</h2>
+                    <p style="font-size: 1.3rem; margin-bottom: 2rem;">Every student should finish school able to complete this sentence with confidence:</p>
+                    <blockquote style="font-size: 1.5rem; font-style: italic; color: #e53e3e; border-left: 4px solid #e53e3e; padding-left: 1rem; margin: 2rem 0;">
+                        "I want to live a life where I solve _______ because _______"
+                    </blockquote>
+                    <p>We don't just teach careers. We develop initiative, agency, and ownership thinking in young Ghanaians.</p>
+                </div>
+                <div style="background: #f7fafc; padding: 2rem; border-radius: 10px;">
+                    <h3>What Initiative Looks Like</h3>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="margin: 1rem 0;">✓ Seeing problems as opportunities to contribute</li>
+                        <li style="margin: 1rem 0;">✓ Taking responsibility for what needs fixing</li>
+                        <li style="margin: 1rem 0;">✓ Creating solutions instead of waiting for them</li>
+                        <li style="margin: 1rem 0;">✓ Thinking like owners, not employees</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="approach-section" id="approach">
+        <div class="container">
+            <h2>How We Develop Initiative</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Through systematic problem identification and design thinking across all career fields</p>
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <div class="approach-icon">🔍</div>
+                    <h3>Identify Problems</h3>
+                    <p>Students learn to see what's not working in their communities and ask "Why does this exist?"</p>
+                </div>
+                <div class="approach-card">
+                    <div class="approach-icon">🎯</div>
+                    <h3>Own Solutions</h3>
+                    <p>Instead of complaining about problems, students take ownership of finding and implementing solutions.</p>
+                </div>
+                <div class="approach-card">
+                    <div class="approach-icon">🔧</div>
+                    <h3>Build & Test</h3>
+                    <p>Students create prototypes, test ideas, and learn from failures - developing resilience and analytical thinking.</p>
+                </div>
+                <div class="approach-card">
+                    <div class="approach-icon">🚀</div>
+                    <h3>Take Initiative</h3>
+                    <p>Students graduate believing they can shape their circumstances rather than just react to them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="transformation-section" id="impact">
+        <div class="container">
+            <h2>The Transformation</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">RETEC students don't just learn about careers - they develop the mindset to create their own opportunities</p>
+            <div class="before-after">
+                <div class="before">
+                    <h3 style="color: #e53e3e;">Before RETEC</h3>
+                    <ul style="margin-top: 1rem;">
+                        <li>"What job can I get?"</li>
+                        <li>"I want a safe government position"</li>
+                        <li>"Someone should fix this problem"</li>
+                        <li>"I don't know what I want to do"</li>
+                        <li>Waiting for opportunities to appear</li>
+                    </ul>
+                </div>
+                <div class="after">
+                    <h3 style="color: #38a169;">After RETEC</h3>
+                    <ul style="margin-top: 1rem;">
+                        <li>"What problem can I solve?"</li>
+                        <li>"I want to create value for others"</li>
+                        <li>"I can work on fixing this problem"</li>
+                        <li>"I know what kind of impact I want to make"</li>
+                        <li>Creating the opportunities they need</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>What Parents & Students Say</h2>
+            <div class="testimonial-card">
+                "Before RETEC, my daughter was only focused on passing exams. Now, she talks about solving real problems in our community. I see a new spark in her."
+                <br> — Parent, Accra
+            </div>
+            <div class="testimonial-card">
+                "I used to think I just needed a government job. RETEC showed me how to create value with my ideas. I now want to start my own project."
+                <br> — JHS Student, Kumasi
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section" id="join">
+        <div class="container">
+            <h2>Develop Initiative in Your Child</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 1rem;">Don't let your child graduate without knowing what they want from life</p>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">RETEC develops students who finish school with direction, purpose, and the initiative to pursue their goals</p>
+            <button class="cta-button" id="footer-cta">Start Your Child's Journey</button>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Reading Times Education & Careers (RETEC). Developing initiative in young Ghanaians.</p>
+            <p>📞 0541992357 | 🌍 Ghana | ✉️ info@retec.org</p>
+        </div>
+    </footer>
+    
+    <!-- Contact Form Modal -->
+    <div class="modal" id="contact-modal">
+        <div class="modal-content">
+            <button class="close-button" id="close-modal">&times;</button>
+            <h2>Start Your Child's Journey</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Parent's Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="child-age">Child's Age</label>
+                    <input type="number" id="child-age" name="child-age" min="10" max="18">
+                </div>
+                <div class="form-group">
+                    <label for="message">How can we help your child?</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%;">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Mobile Navigation Toggle
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Modal Functionality
+        const modal = document.getElementById('contact-modal');
+        const openFormButtons = document.querySelectorAll('#open-form, #hero-cta, #footer-cta');
+        const closeModal = document.getElementById('close-modal');
+        
+        openFormButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                modal.style.display = 'flex';
+            });
+        });
+        
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside the content
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        // Form Submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real implementation, you would send this data to a server
+            alert('Thank you for your interest! We will contact you soon.');
+            modal.style.display = 'none';
+            // Reset form
+            this.reset();
+        });
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+```
