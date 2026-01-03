@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RETEC Africa | Reading Times Education & Careers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); }
+        .hero-gradient { background: linear-gradient(135deg, #064e3b 0%, #022c22 100%); }
+        .retec-green { color: #10b981; }
+        .retec-blue { color: #3b82f6; }
+        .bg-retec-gradient { background: linear-gradient(to right, #3b82f6, #10b981); }
+        .loader { border-top-color: #10b981; animation: spinner 1.5s linear infinite; }
+        @keyframes spinner { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .card-hover:hover { transform: translateY(-8px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-retec-gradient rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg">R</div>
+                <div>
+                    <span class="block font-black text-xl tracking-tighter leading-none">RETEC <span class="retec-green">AFRICA</span></span>
+                    <span class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Education & Careers</span>
+                </div>
+            </div>
+            <div class="hidden lg:flex gap-10 text-sm font-bold text-slate-600">
+                <a href="#about" class="hover:text-emerald-600 transition">About Us</a>
+                <a href="#architecture" class="hover:text-emerald-600 transition">7-Layer System</a>
+                <a href="#ai-tools" class="hover:text-blue-600 font-extrabold text-blue-600">✨ AI Partner</a>
+                <a href="#impact" class="hover:text-emerald-600 transition">Our Impact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="mailto:retec-africa@outlook.com" class="hidden md:block text-sm font-bold text-slate-600 hover:text-emerald-600">Login</a>
+                <a href="#ai-tools" class="bg-emerald-600 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-emerald-700 shadow-md transition transform active:scale-95">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-40 pb-32 px-4 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#FFFFFF" d="M44.7,-76.4C58.1,-69.2,69.2,-58.1,77.3,-44.7C85.4,-31.3,90.5,-15.7,89.3,-0.7C88.1,14.3,80.7,28.6,71.5,40.8C62.3,53,51.3,63.1,38.3,70.1C25.3,77.1,10.3,81,-4,87.9C-18.3,94.8,-36.5,104.7,-50.2,100.2C-63.8,95.7,-72.9,76.8,-79.9,59.3C-86.8,41.8,-91.6,25.7,-91.2,10.2C-90.8,-5.3,-85.2,-20.2,-77.2,-33.6C-69.2,-47,-58.8,-58.8,-45.8,-66.3C-32.8,-73.8,-17.2,-77,0.3,-77.5C17.7,-78,35.4,-75.7,44.7,-76.4Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div>
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold mb-6">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    2025 ADWUMAWURA FINALIST
+                </div>
+                <h1 class="text-6xl lg:text-7xl font-black leading-[1.05] mb-8 tracking-tighter">
+                    Empowering <br><span class="text-emerald-400 italic">Africa's</span> Next <br>Career <span class="text-blue-400 underline decoration-wavy decoration-2 underline-offset-8">Giants.</span>
+                </h1>
+                <p class="text-xl text-emerald-100/70 mb-10 max-w-lg leading-relaxed">
+                    Connecting JHS education to the real-world economy. We bridge the gap between abstract learning and career success.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="document.getElementById('ai-tools').scrollIntoView()" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 px-8 py-4 rounded-2xl font-black text-lg shadow-xl shadow-emerald-500/20 transition-all">Explore AI Partner ✨</button>
+                    <button class="bg-white/5 hover:bg-white/10 border border-white/20 px-8 py-4 rounded-2xl font-bold text-lg backdrop-blur-md transition-all">Our Story</button>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute -inset-4 bg-emerald-500/20 blur-3xl rounded-full"></div>
+                <div class="bg-slate-900/80 backdrop-blur-xl p-10 rounded-[40px] border border-white/10 shadow-2xl relative">
+                    <div class="flex items-center justify-between mb-8">
+                        <div>
+                            <h3 class="font-black text-2xl">The Youth Crisis</h3>
+                            <p class="text-slate-400 text-sm">Oti Region Employment Data</p>
+                        </div>
+                        <div class="p-3 bg-emerald-500/10 rounded-2xl text-emerald-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        </div>
+                    </div>
+                    <div class="h-64">
+                        <canvas id="heroChart"></canvas>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/5 grid grid-cols-2 gap-4">
+                        <div>
+                            <div class="text-emerald-400 font-black text-3xl">32%</div>
+                            <div class="text-slate-500 text-xs font-bold uppercase tracking-widest">Unemployment</div>
+                        </div>
+                        <div>
+                            <div class="text-blue-400 font-black text-3xl">1.2M</div>
+                            <div class="text-slate-500 text-xs font-bold uppercase tracking-widest">Target Youth</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✨ AI Strategic Partner Section (Dashboard Style) -->
+    <section id="ai-tools" class="py-32 px-4 bg-slate-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <h2 class="text-5xl font-black tracking-tight mb-4">✨ AI Strategic <span class="retec-green">Partner</span></h2>
+                    <p class="text-slate-500 text-lg max-w-xl font-medium">Use our proprietary AI models to explore the future of career-led education in Ghana.</p>
+                </div>
+                <div class="flex items-center gap-2 text-sm font-bold bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    Powered by Gemini 2.5 Flash
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Tool 1 -->
+                <div class="bg-white p-10 rounded-[32px] shadow-sm border border-slate-100 card-hover">
+                    <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 mb-8">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4">Pathway Explorer</h3>
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed">Instantly map any career to the GES JHS curriculum using our Layer 2 architecture.</p>
+                    <div class="space-y-4">
+                        <input type="text" id="careerInput" placeholder="e.g. Solar Engineer" class="w-full px-5 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none text-sm transition-all bg-slate-50">
+                        <button onclick="runPathwayExplorer()" class="w-full bg-slate-900 text-white py-3 rounded-xl font-bold text-sm hover:bg-slate-800 transition shadow-lg">Generate Roadmap ✨</button>
+                    </div>
+                    <div id="pathwayLoader" class="hidden flex justify-center py-6">
+                        <div class="loader ease-linear rounded-full border-2 border-t-2 border-slate-200 h-8 w-8"></div>
+                    </div>
+                    <div id="pathwayResult" class="mt-6 text-xs text-slate-600 bg-emerald-50/50 p-6 rounded-2xl border border-emerald-100 hidden"></div>
+                </div>
+
+                <!-- Tool 2 -->
+                <div class="bg-white p-10 rounded-[32px] shadow-sm border border-slate-100 card-hover">
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-8">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4">Lesson Workshop</h3>
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed">Transform an abstract school topic into a high-impact, industry-relevant student activity.</p>
+                    <div class="space-y-4">
+                        <input type="text" id="topicInput" placeholder="e.g. Circulatory System" class="w-full px-5 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none text-sm transition-all bg-slate-50">
+                        <button onclick="runLessonCreator()" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-lg">Design Lesson ✨</button>
+                    </div>
+                    <div id="lessonLoader" class="hidden flex justify-center py-6">
+                        <div class="loader ease-linear rounded-full border-2 border-t-2 border-slate-200 h-8 w-8"></div>
+                    </div>
+                    <div id="lessonResult" class="mt-6 text-xs text-slate-600 bg-blue-50/50 p-6 rounded-2xl border border-blue-100 hidden"></div>
+                </div>
+
+                <!-- Tool 3 -->
+                <div class="bg-white p-10 rounded-[32px] shadow-sm border border-slate-100 card-hover">
+                    <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-600 mb-8">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4">Impact Forecast</h3>
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed">Calculate the multi-year socio-economic ROI for implementing RETEC in your constituency.</p>
+                    <div class="space-y-4">
+                        <input type="number" id="studentCount" placeholder="Number of Students" class="w-full px-5 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-500 outline-none text-sm transition-all bg-slate-50">
+                        <button onclick="runImpactForecaster()" class="w-full bg-amber-500 text-white py-3 rounded-xl font-bold text-sm hover:bg-amber-600 transition shadow-lg">Run Analysis ✨</button>
+                    </div>
+                    <div id="impactLoader" class="hidden flex justify-center py-6">
+                        <div class="loader ease-linear rounded-full border-2 border-t-2 border-slate-200 h-8 w-8"></div>
+                    </div>
+                    <div id="impactResult" class="mt-6 text-xs text-slate-600 bg-amber-50/50 p-6 rounded-2xl border border-amber-100 hidden"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="py-32 px-4 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+            <div class="relative">
+                <div class="absolute top-0 -left-10 w-64 h-64 bg-emerald-100/50 rounded-full blur-3xl"></div>
+                <h2 class="text-5xl font-black tracking-tight mb-8">The 7-Layer <br><span class="retec-green">Curriculum System.</span></h2>
+                <div class="space-y-6">
+                    <div class="flex gap-6 items-center p-4 rounded-2xl hover:bg-slate-50 transition">
+                        <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center font-black text-xl">1</div>
+                        <div>
+                            <h4 class="font-bold text-lg">GES syllabus mapping</h4>
+                            <p class="text-slate-500 text-sm">Every activity is 100% aligned with national standards.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-center p-4 rounded-2xl hover:bg-slate-50 transition">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-black text-xl">2</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Relevance filtration</h4>
+                            <p class="text-slate-500 text-sm">We filter abstract topics through 1,000+ daily career tasks.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-center p-4 rounded-2xl hover:bg-slate-50 transition">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500 text-white flex items-center justify-center font-black text-xl">3</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Problem-Based Integration</h4>
+                            <p class="text-slate-500 text-sm">Students solve local economic problems using JHS subjects.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-[48px] border border-slate-200">
+                <div class="bg-white rounded-[40px] shadow-2xl p-10">
+                    <div class="flex items-center gap-4 mb-10">
+                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+                    </div>
+                    <div class="space-y-8">
+                        <div class="h-4 bg-slate-100 rounded-full w-3/4"></div>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="h-20 bg-emerald-500/10 rounded-2xl border border-emerald-500/20 flex flex-col items-center justify-center">
+                                <span class="font-black text-emerald-600 text-2xl">14</span>
+                                <span class="text-[10px] uppercase font-bold text-emerald-500 tracking-widest">Clusters</span>
+                            </div>
+                            <div class="h-20 bg-blue-500/10 rounded-2xl border border-blue-500/20 flex flex-col items-center justify-center">
+                                <span class="font-black text-blue-600 text-2xl">1k+</span>
+                                <span class="text-[10px] uppercase font-bold text-blue-500 tracking-widest">Activities</span>
+                            </div>
+                            <div class="h-20 bg-slate-900/5 rounded-2xl border border-slate-900/10 flex flex-col items-center justify-center">
+                                <span class="font-black text-slate-900 text-2xl">100%</span>
+                                <span class="text-[10px] uppercase font-bold text-slate-600 tracking-widest">GES Aligned</span>
+                            </div>
+                        </div>
+                        <div class="h-4 bg-slate-100 rounded-full w-1/2"></div>
+                        <div class="p-6 bg-slate-950 rounded-3xl text-white">
+                            <h5 class="font-bold text-emerald-400 mb-2">Prototyping in Oti</h5>
+                            <p class="text-sm text-slate-400 leading-relaxed">Developing the world's first "Economic Context Syllabus" for rural education centers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-slate-950 text-slate-400 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-16">
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-retec-gradient rounded-xl flex items-center justify-center text-white font-black text-xl">R</div>
+                    <span class="font-black text-white text-xl">RETEC <span class="text-emerald-500">AFRICA</span></span>
+                </div>
+                <p class="text-sm leading-relaxed max-w-xs">Reading Times Education & Careers. Breaking the cycle of youth unemployment through innovative curriculum design.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                <div class="flex flex-col gap-4 text-sm font-medium">
+                    <a href="#" class="hover:text-emerald-400 transition">About Us</a>
+                    <a href="#" class="hover:text-emerald-400 transition">Our 7-Layer Architecture</a>
+                    <a href="#" class="hover:text-emerald-400 transition">Partnerships</a>
+                    <a href="#" class="hover:text-emerald-400 transition">Careers</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Contact</h4>
+                <p class="text-sm mb-4 italic">"Transforming Africa, one classroom at a time."</p>
+                <div class="flex flex-col gap-2 text-sm font-bold text-white">
+                    <p>retec-africa@outlook.com</p>
+                    <p>Dambai, Oti Region, Ghana</p>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 pt-16 mt-16 border-t border-white/5 text-center text-xs font-bold uppercase tracking-[0.2em]">
+            © 2025 RETEC AFRICA - ALL RIGHTS RESERVED
+        </div>
+    </footer>
+
+    <script>
+        const apiKey = ""; // API Key handled by environment
+
+        async function callGemini(prompt, systemPrompt) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] }
+            };
+
+            for (let i = 0; i < 5; i++) {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const data = await response.json();
+                    return data.candidates?.[0]?.content?.parts?.[0]?.text;
+                } catch (e) {
+                    await new Promise(r => setTimeout(r, Math.pow(2, i) * 1000));
+                }
+            }
+            return "Unable to connect. Please try again.";
+        }
+
+        async function runPathwayExplorer() {
+            const career = document.getElementById('careerInput').value;
+            if (!career) return;
+            const loader = document.getElementById('pathwayLoader');
+            const result = document.getElementById('pathwayResult');
+            loader.classList.remove('hidden');
+            result.classList.add('hidden');
+
+            const system = "You are an expert on the Ghanaian GES JHS Curriculum and RETEC's 7-Layer Architecture. Explain how specific JHS subjects (like BDT, Science, Math) map to this requested career. Use bullet points. Keep it professional.";
+            const prompt = `Map the career of '${career}' to the JHS curriculum in Ghana.`;
+            
+            const text = await callGemini(prompt, system);
+            loader.classList.add('hidden');
+            result.classList.remove('hidden');
+            result.innerHTML = text.replace(/\n/g, '<br>').replace(/\*\*/g, '<b>').replace(/\*/g, '•');
+        }
+
+        async function runLessonCreator() {
+            const topic = document.getElementById('topicInput').value;
+            if (!topic) return;
+            const loader = document.getElementById('lessonLoader');
+            const result = document.getElementById('lessonResult');
+            loader.classList.remove('hidden');
+            result.classList.add('hidden');
+
+            const system = "You are a RETEC Curriculum Designer. Take a standard Ghanaian JHS school topic and create one specific activity that links it to a modern, high-value career path. Identify the Career Cluster.";
+            const prompt = `School Topic: ${topic}. Create a RETEC career-linked activity.`;
+            
+            const text = await callGemini(prompt, system);
+            loader.classList.add('hidden');
+            result.classList.remove('hidden');
+            result.innerHTML = text.replace(/\n/g, '<br>').replace(/\*\*/g, '<b>').replace(/\*/g, '•');
+        }
+
+        async function runImpactForecaster() {
+            const count = document.getElementById('studentCount').value;
+            if (!count) return;
+            const loader = document.getElementById('impactLoader');
+            const result = document.getElementById('impactResult');
+            loader.classList.remove('hidden');
+            result.classList.add('hidden');
+
+            const system = "Economic development strategist. Forecast the socio-economic impact and ROI for implementing the RETEC career-led system in Ghana for a given number of students over 10 years.";
+            const prompt = `Impact of RETEC for ${count} JHS students in the Oti Region.`;
+            
+            const text = await callGemini(prompt, system);
+            loader.classList.add('hidden');
+            result.classList.remove('hidden');
+            result.innerHTML = text.replace(/\n/g, '<br>').replace(/\*\*/g, '<b>').replace(/\*/g, '•');
+        }
+
+        // Hero Data Chart
+        const ctx = document.getElementById('heroChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Healthcare', 'Teaching', 'Security', 'Engineering', 'Tech/Coding'],
+                datasets: [{
+                    label: 'Aspiration Rate (%)',
+                    data: [18, 15, 20, 4, 2.8],
+                    backgroundColor: ['#10b981', '#10b981', '#10b981', '#3b82f6', '#3b82f6'],
+                    borderRadius: 12,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { 
+                        grid: { color: 'rgba(255,255,255,0.05)', drawBorder: false }, 
+                        ticks: { color: '#64748b', font: { weight: 'bold' } }, 
+                        beginAtZero: true 
+                    },
+                    x: { 
+                        grid: { display: false },
+                        ticks: { color: '#64748b', font: { weight: 'bold' } } 
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
